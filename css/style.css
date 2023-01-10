@@ -3,10 +3,11 @@
     --navbarFontColor:  #d65108;
 }
 
-.navbar-inner{
-    background-image:url("TastyBytes.png") !important;
+/* .navbar-inner{
+    background-image:url(".TastyBytes.png") !important;
     background-repeat: no-repeat !important;
-}
+   
+} */
 
 * {
     margin: 0;
@@ -260,6 +261,12 @@ body{
     font-weight: 600;
     font-size: 1.5rem;
     width: 100%;
+}
+
+footer {
+    grid-area: area7;
+    text-align: center;
+    color: #b54507;
 }
 
 
