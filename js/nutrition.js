@@ -5,6 +5,12 @@ const output = document.getElementById('output');
 const appId2 = '4130d60b';
 const apiKey2 = '9676bf3430144b40f123de464a5abf50';
 
+//this will reset the form
+
+var reset = document.getElementById('reset')
+    reset.addEventListener('click', ()=> {
+      output.innerHTML = " "
+})
 
 // this function retrieves the data from the API
 async function fetchDetails(){
@@ -20,7 +26,16 @@ async function fetchDetails(){
     },
     body: JSON.stringify({ ingr }) //we are going to stringify an object having one property
   });
-  return await response.json(); // when we get the response, this will be converted to an object
+  //error handling
+  if (response.ok) {
+    return await response.json(); // when we get the correct response, this will be converted to an object
+  } else if(response.status == 555){
+    throw new SyntaxError("Incomplete or incorrect data");
+  }
+   else {
+    throw Error(response.statusText);
+  }
+  
 
 }
 
@@ -50,7 +65,20 @@ document.getElementById('check-form').addEventListener('submit',function(e){
     </dl> 
     `
     output.innerHTML = html;
-  });
+  }) //catching the errors, if any
+  .catch((error =>{
+    if (error instanceof ReferenceError) {
+            
+      output.innerHTML = "<p>Please enter the quantity and ingredients to check</p>";
+    }
+    else if (error instanceof SyntaxError){
+      output.innerHTML = "<p>Incomplete or incorrect data. Please try again, adding the quantity and the ingredients</p>";
+    }
+    else{
+      output.innerHTML = error + " " +"<p>There was an error, please try again</p>";
+    }
+   }
+   ));
 })
 ,fetchDetails
 }
