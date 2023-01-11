@@ -2,14 +2,15 @@
 
 const recipeInput = document.getElementById('ingredients');
 const output = document.getElementById('output');
-const appId2 = '4130d60b';
-const apiKey2 = '9676bf3430144b40f123de464a5abf50';
-
+const appId2 = 'd9735d53';
+const apiKey2 = 'a61170603a92f4152e4e7d175e72b1f3';
+var tableBody = document.querySelector('.table-body');
+var totalCalories = document.querySelector('.total-calories');
 //this will reset the form
 
 var reset = document.getElementById('reset')
     reset.addEventListener('click', ()=> {
-      output.innerHTML = " "
+      tableBody.innerHTML = " "
 })
 
 // this function retrieves the data from the API
@@ -50,26 +51,40 @@ document.getElementById('check-form').addEventListener('submit',function(e){
     //the API returns an array totalDaily and we are using the elements array to get all keys of the totalDaily.
     // The properties for the keys will be stored into obj
     var elements = [];
-
+    var nutritionsArray = [];
+    totalCalories.insertAdjacentHTML('beforeend',
+     `<th>${data.calories}</th>`)
     Object.keys(data.totalDaily).forEach(key => {
-      var obj = data.totalDaily[key];
-      elements.push(`<dt>${obj.label}</dt> <dd>${Math.round(obj.quantity)}${obj.unit}</dd>`);
+        strToArray = `${data.totalDaily[key].label} ${Math.round(data.totalDaily[key].quantity)}%`;
+        nutritionsArray.push(strToArray);
+
+    });
+    var sortedArray = nutritionsArray.sort();
+    console.log(sortedArray)
+    sortedArray.forEach(function(item) {
+        var nameAndValue = item.split(' ');
+        tableBody.insertAdjacentHTML('beforeend',
+            `<tr>
+                <td>${nameAndValue.splice(0,nameAndValue.length-1).join(' ')}</td>
+                <td>${nameAndValue.splice(-1)}</td>
+            </tr>`
+        );
     })
 
     //we inject our html with the data stored in elements
-    var html = `
-    <dl>
-    <dt>Calories</dt>
-    <dd>${data.calories}</dd>
-    ${elements.join('')}
-    </dl> 
-    `    
-    output.innerHTML = html;
+    // var html = `
+    // <dl>
+    // <dt>Calories</dt>
+    // <dd>${data.calories}</dd>
+    // ${elements.join('')}
+    // </dl> 
+    // `
+    // output.innerHTML = html;
   }) //catching the errors, if any
   .catch((error =>{
     if (error instanceof ReferenceError) {
             
-      output.innerHTML = "<p>Please enter the quantity and ingredients to check</p>";
+        output.innerHTML = "<p>Please enter the quantity and ingredients to check</p>";
     }
     else if (error instanceof SyntaxError){
       output.innerHTML = "<p>Incomplete or incorrect data. Please try again, adding the quantity and the ingredients</p>";
