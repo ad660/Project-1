@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
   <link rel="stylesheet" href="./assets/css/style2.css">
-  <title>Notritions</title>
+  <title>Nutritions</title>
 </head>
 
 <body>
@@ -37,16 +37,27 @@
   <div class="container">
     <div class="row">
       <div class="col-sm no-padding">
-        <form class="form-background nutritions">
-          <div class="form-group">
-            <label for="formGroupExampleInput" class="standard-padding">What do you want to check</label>
-            <input type="textarea" class="form-control" id="formGroupExampleInput">
-          </div>
-        </form>
+        <div class="row">
+          <form id="check-form">
+            <div class="mb-3"></div>
+            <div class="mb-3">
+              <label for="recipe" class="form-label">Ingredients</label>
+              <textarea class="form-control" id="ingredients" name="ingredients" rows="3" placeholder="Enter the quantity and the ingredients to see the nutritional values"></textarea>
+            </div>
+            <input class="btn btn-primary" type="submit" id="submit" value="Check nutrition values"/>
+            <input class="btn btn-primary" type="reset" id="reset" value="Clear list"/>              
+          </form>
+          
+      </div>
+    
+      <div class="row" id="output"></div>
+
+        
+
       </div>
     </div>
   </div>
-
+<!--
   <div class="container">
     <div>
       <table class="table table-hover table-bordered">
@@ -67,7 +78,7 @@
         </tbody>
       </table>
     </div>
-  </div>
+  </div>-->
 
 
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -79,7 +90,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
     integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
     crossorigin="anonymous"></script>
-  <script src="./assets/js/script2.js"></script>
+  <script src="./assets/js/nutrition.js"></script>
 </body>
 
 </html>

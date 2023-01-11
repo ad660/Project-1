@@ -53,7 +53,7 @@ document.getElementById('check-form').addEventListener('submit',function(e){
 
     Object.keys(data.totalDaily).forEach(key => {
       var obj = data.totalDaily[key];
-      elements.push(`<dt>${obj.label}</dt><dd>${Math.round(obj.quantity)}${obj.unit}</dd>`);
+      elements.push(`<dt>${obj.label}</dt> <dd>${Math.round(obj.quantity)}${obj.unit}</dd>`);
     })
 
     //we inject our html with the data stored in elements
@@ -63,7 +63,7 @@ document.getElementById('check-form').addEventListener('submit',function(e){
     <dd>${data.calories}</dd>
     ${elements.join('')}
     </dl> 
-    `
+    `    
     output.innerHTML = html;
   }) //catching the errors, if any
   .catch((error =>{
