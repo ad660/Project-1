@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://github.com/ad660/Project-1/blob/main/assets/css/style.css">
     
 </head>
 <body>
@@ -35,19 +35,32 @@
       <a class="nav-link disabled">Disabled</a>
     </li>
   </ul> -->
-  <header id="header" class="header fixed-top d-flex align-items-center">
+  <header id="header" class="header d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1>Tasty Byte<span>.</span></h1>
-      </a>
+  
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">Recipes</a></li>
-          <li><a href="#menu">Ingredient checker</a></li>        
+      <nav class="navbar navbar-expand-lg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/recipes.html">Recipes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/nutritions.html">Ingredient checker</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
   </header>
   <!-- End Header -->
 <!-- End -->
