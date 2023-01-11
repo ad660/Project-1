@@ -10,7 +10,8 @@ var totalCalories = document.querySelector('.total-calories');
 
 var reset = document.getElementById('reset')
     reset.addEventListener('click', ()=> {
-      tableBody.innerHTML = " "
+      tableBody.innerHTML = "";
+      totalCalories.innerHTML = "";
 })
 
 // this function retrieves the data from the API
@@ -50,17 +51,18 @@ document.getElementById('check-form').addEventListener('submit',function(e){
 
     //the API returns an array totalDaily and we are using the elements array to get all keys of the totalDaily.
     // The properties for the keys will be stored into obj
-    var elements = [];
     var nutritionsArray = [];
+    totalCalories.innerHTML = "";
     totalCalories.insertAdjacentHTML('beforeend',
-     `<th>${data.calories}</th>`)
+     `<th>Total Calories</th>
+     <th>${data.calories} cal</th>`)
     Object.keys(data.totalDaily).forEach(key => {
         strToArray = `${data.totalDaily[key].label} ${Math.round(data.totalDaily[key].quantity)}%`;
         nutritionsArray.push(strToArray);
 
     });
     var sortedArray = nutritionsArray.sort();
-    console.log(sortedArray)
+    tableBody.innerHTML = "";
     sortedArray.forEach(function(item) {
         var nameAndValue = item.split(' ');
         tableBody.insertAdjacentHTML('beforeend',
