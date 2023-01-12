@@ -643,3 +643,22 @@
   .footer .credits a {
     color: #fff;
   }
+
+ /* Recipies styling */
+
+  .card-style-main{
+    margin: 15px 0px;
+    transition: box-shadow 1.3s ease-in-out;
+  }
+
+  .card-style-main > :hover {
+    cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  .button-style{
+    background-color: #d65108;
+    color: #fff;
+  }
+
+
