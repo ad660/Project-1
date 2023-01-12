@@ -1,5 +1,6 @@
 :root {
     --navbarColor: #fff;
+<<<<<<< HEAD
     --navbarFontColor:  #d65108;
 }
 
@@ -134,3 +135,14 @@ footer {
         margin-right: auto;
     }
 }
+=======
+    --navbarFontColor: #000;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+>>>>>>> 1538f05f45ec001c8be94b2ed4f3ff43451e1aa4

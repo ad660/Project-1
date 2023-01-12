@@ -5,7 +5,10 @@
 This responsive project uses:
 - Pure vanilla javascript 
 - Bootstrap
+<<<<<<< HEAD
 -JQUERY
+=======
+>>>>>>> 1538f05f45ec001c8be94b2ed4f3ff43451e1aa4
 - UI 
 - 2 Server side API's for recipes and nutrition
 -Modals
@@ -17,6 +20,7 @@ This responsive project uses:
 //The landing page looks like...
 
 
+<<<<<<< HEAD
 ![landingpage](../../../../../../C:/Users/tasmi/bootcamp/Project-01/Project-1/assets/images/Picture1.png)
 
 
@@ -47,5 +51,33 @@ This responsive project uses:
 // Enter quantity and ingredient to present the nutrition values- data gathered using API....
 
 ![results](../../../../../../C:/Users/tasmi/bootcamp/Project-01/Project-1/assets/images/Picture6.png)
+=======
+
+
+
+
+//Enter ingredients in search bar...
+
+
+
+
+
+// Listed recipes retrieved using TastyAPI presented as...
+
+
+
+
+
+// Click on Get instructions to produce the recipes... 
+
+
+*Nutrition*
+
+
+// Nutrition page looks like...
+
+
+// Enter ingredient to present the nutrition values- data gathered using API....
+>>>>>>> 1538f05f45ec001c8be94b2ed4f3ff43451e1aa4
 
 
