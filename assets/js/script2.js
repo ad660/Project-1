@@ -259,15 +259,22 @@ function displayRecipes(data, recipeToFind) {
     var toDisplay = recipeToFind ? data[recipeToFind].results : data.results;
     var recipeIngredientsArray = [];
     var cardNumber = 0;
-    while (cardNumber <= 5) {
+    if(!toDisplay.length) {
+        $('.recipes-output').append('<h3>Recipes not found</h3>')
+        return;
+    }
+    var maxValue = toDisplay.length > 5 ? 5 : toDisplay.length - 1;
+    while (cardNumber <= maxValue) {
 
         // cooking instructions
         var isntr = toDisplay[cardNumber].instructions;
         // var ingredientsNeddedGrams = toDisplay[cardNumber].sections[0].components;
-        recipeIngredientsArray.push(toDisplay[cardNumber].sections[0].components);
-        var recipeNutritions = toDisplay[cardNumber].nutrition;
+        if(toDisplay[cardNumber].sections) {
+            recipeIngredientsArray.push(toDisplay[cardNumber].sections[0].components);
+            var recipeNutritions = toDisplay[cardNumber].nutrition;
+            var recipeDetails = toDisplay[cardNumber];
+        }
 
-        var recipeDetails = toDisplay[cardNumber];
         $('.recipes-output').append(`${displayCard(recipeDetails, cardNumber)} ${displayModal(recipeDetails, isntr, cardNumber, recipeIngredientsArray[cardNumber], recipeNutritions)}`);
         // $('.output').append(`${displayCard(recipesDetails)} ${displayInstructionModal(recipes,isntr, cardNumber)}`)
         cardNumber++;
