@@ -6,12 +6,15 @@ const appId2 = 'd9735d53';
 const apiKey2 = 'a61170603a92f4152e4e7d175e72b1f3';
 var tableBody = document.querySelector('.table-body');
 var totalCalories = document.querySelector('.total-calories');
+var tableHeader = document.querySelector('.table-header');
+tableHeader.style.visibility = "hidden";
 //this will reset the form
 
 var reset = document.getElementById('reset')
     reset.addEventListener('click', ()=> {
       tableBody.innerHTML = "";
       totalCalories.innerHTML = "";
+      tableHeader.style.visibility = "hidden";
 })
 
 // this function retrieves the data from the API
@@ -55,7 +58,8 @@ document.getElementById('check-form').addEventListener('submit',function(e){
     totalCalories.innerHTML = "";
     totalCalories.insertAdjacentHTML('beforeend',
      `<th>Total Calories</th>
-     <th>${data.calories} cal</th>`)
+     <th>${data.calories} cal</th>`);
+     tableHeader.style.visibility = "visible";
     Object.keys(data.totalDaily).forEach(key => {
         strToArray = `${data.totalDaily[key].label} ${Math.round(data.totalDaily[key].quantity)}%`;
         nutritionsArray.push(strToArray);
@@ -65,6 +69,7 @@ document.getElementById('check-form').addEventListener('submit',function(e){
     tableBody.innerHTML = "";
     sortedArray.forEach(function(item) {
         var nameAndValue = item.split(' ');
+        
         tableBody.insertAdjacentHTML('beforeend',
             `<tr>
                 <td>${nameAndValue.splice(0,nameAndValue.length-1).join(' ')}</td>
