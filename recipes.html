@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style2.css">
+    <title>Recipes</title>
+</head>
+
+<body>
+
+ <!-- Navbar -->
+ <!-- Header  -->
+ <header id="header" class="header d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between logo">
+
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+      <h1><a href="./index.html">Tasty Byte<span>.</span></a></h1>
+        
+        
+      <nav class="navbar navbar-expand-lg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="navbar-small-screen"  id="navbarNav">
+          <ul class="navbar-nav">
+            <li style="color: rgb(255, 0, 221);" class="nav-item active">
+              <a class="nav-link" href="./index.html">Home<span class="sr-only"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Recipes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./nutritions.html">Ingredient checker</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  </header>
+  
+  <!-- End Header -->
+<!-- End nav bar  -->
+
+    <!-- Input -->
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-sm no-padding">
+                <form class="form-background recipes">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput" class="standard-padding">What do you want to eat
+                            today</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput"
+                            placeholder="Example input placeholder">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div> -->
+    <div class="container">
+        <div class="meal-wrapper">
+          <div class="meal-search">
+            <h2 class="title">Find Meals for Your Ingredients</h2>
+            <blockquote>A recipe has no soul. You, as the cook, must bring soul to the recipe. <br>
+              <cite>- Thomas Keller </cite>
+            </blockquote>
+            <form class="meal-search-box recipes">
+              <input type="text" class="search-control" placeholder="Enter an Ingredient" id="search-input">
+              <button type="submit" class="search-btn btn" id="search-btn">
+                <!-- <i class=""></i> -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+              </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- searching results -->
+    <div class="container searching-results">
+        <div class="row recipes-output">
+            
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="./assets/js/script2.js"></script>
+</body>
+
+</html>
