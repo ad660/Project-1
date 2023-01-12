@@ -244,12 +244,12 @@ function displayModal(recipeDetails, isntr, cardNumber, ingredientsNeddedGrams, 
 }
 
 function displayCard(recipeDetails, cardNumber) {
-    return `<div class="col card-size">
+    return `<div class="col card-size card-style-main">
                 <div class="card">
                     <img src="${recipeDetails.thumbnail_url}" class="card-img-top" alt="...">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                         <h5 class="card-title">${recipeDetails.name}</h5>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop${cardNumber}">See more</button>
+                        <button type="button" class="btn mt-auto button-style" data-toggle="modal" data-target="#staticBackdrop${cardNumber}">See more</button>
                     </div>
                 </div>
             </div>`
